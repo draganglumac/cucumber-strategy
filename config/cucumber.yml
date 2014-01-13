@@ -1,0 +1,2 @@
+android: PLATFORM=android --tags @android
+ios:     PLATFORM=ios     --tags @ios
