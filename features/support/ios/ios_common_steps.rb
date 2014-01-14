@@ -1,4 +1,4 @@
-module IosSteps 
+module IosActions 
 
   def ensure_on_home_page
     puts "iOS, I am on the home page."

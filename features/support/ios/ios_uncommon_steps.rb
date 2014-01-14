@@ -1,4 +1,4 @@
-module IosSteps
+module IosActions
   
   def ensure_ucommmon_scenario
     puts "Ensure uncommon scenario for iOS."
@@ -9,7 +9,7 @@ module IosSteps
   end
 
   def verify_common_page(text_snippets)
-    current_page = object_for('Common')
+    current_page = IosCommonPage.new 
     text_snippets.each { |snippet| current_page.present?(snippet) }
   end
 

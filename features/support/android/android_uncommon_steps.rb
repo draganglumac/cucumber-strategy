@@ -1,4 +1,4 @@
-module AndroidSteps
+module AndroidActions
 
   def ensure_ucommmon_scenario
     puts "Ensure uncommon scenario for Android."
@@ -9,7 +9,7 @@ module AndroidSteps
   end
 
   def verify_common_page(text_snippets)
-    current_page = object_for('Common')
+    current_page = AndroidCommonPage.new 
     text_snippets.each { |snippet| current_page.present?(snippet) }
   end
 

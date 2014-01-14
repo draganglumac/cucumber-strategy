@@ -1,3 +1,3 @@
 class AndroidRunner
-  include AndroidSteps if android?
+  include AndroidActions if android?
 end

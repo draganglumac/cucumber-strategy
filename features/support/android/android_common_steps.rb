@@ -1,4 +1,4 @@
-module AndroidSteps
+module AndroidActions
 
   def ensure_on_home_page
     puts "Android, I am on the home page."

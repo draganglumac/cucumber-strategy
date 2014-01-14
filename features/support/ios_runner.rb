@@ -1,3 +1,3 @@
 class IosRunner
-  include IosSteps if ios?
+  include IosActions if ios?
 end

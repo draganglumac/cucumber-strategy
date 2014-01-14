@@ -1,7 +1,7 @@
 class IosCommonPage
 
   def initialize
-    @text = ['common', 'page']
+    @text = ['common', 'rage']
   end
 
   def present?(text)
