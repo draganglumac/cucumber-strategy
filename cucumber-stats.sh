@@ -37,6 +37,10 @@ stats()
 	echo ""
 }
 
+if [ -z "$COVERAGE_HOME" ]; then
+	COVERAGE_HOME=`pwd`
+fi
+
 cucumber "$@" > cukes.stats
 retval=$?
 
@@ -46,8 +50,8 @@ cat cukes.stats
 scenarios=`cat cukes.stats | grep -E '(^[0-9]+ scenarios)' | sed 's/(//g' | sed 's/)//g' | sed 's/,//g'`
 steps=`cat cukes.stats | grep -E '(^[0-9]+ steps)' | sed 's/(//g' | sed 's/)//g' | sed 's/,//g'`
 
-stats $scenarios
-stats $steps
+stats $scenarios > $COVERAGE_HOME/bdd-coverage.stats
+stats $steps >> $COVERAGE_HOME/bdd-coverage.stats
 
 rm cukes.stats
 exit $retval
