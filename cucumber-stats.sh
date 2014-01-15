@@ -38,11 +38,10 @@ stats()
 }
 
 cucumber "$@" > cukes.stats
-cat cukes.stats
-
 retval=$?
-echo "retval=$retval"
-echo ""
+
+# Display output to stdout
+cat cukes.stats
 
 scenarios=`cat cukes.stats | grep -E '(^[0-9]+ scenarios)' | sed 's/(//g' | sed 's/)//g' | sed 's/,//g'`
 steps=`cat cukes.stats | grep -E '(^[0-9]+ steps)' | sed 's/(//g' | sed 's/)//g' | sed 's/,//g'`
@@ -51,3 +50,4 @@ stats $scenarios
 stats $steps
 
 rm cukes.stats
+exit $retval
