@@ -15,3 +15,15 @@ end
 Then(/^I should see words (.*) and (.*)$/) do |first, second|
   runner.verify_common_page [first, second]
 end
+
+Given(/^I have an unimplemented step$/) do
+  runner.verify_unimplemented
+end
+
+When(/^I run the unimplemented step$/) do
+  runner.run_unimplemented
+end
+
+Then(/^I should see it in unimplemented stats$/) do
+  runner.check_unimplemented_stats
+end
